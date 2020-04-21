@@ -59,12 +59,13 @@
 
         if(isset($_GET['semester'])){
             $semester = mysqli_real_escape_string($db, $_GET['semester']);
-            $search = mysqli_real_escape_string($db, $_POST['sval']);
-            if(!isset($search)){ $search = ''; }
-            printf("<form method='POST' action='index.php'> <label for='sval'>Search by code or name: </label> <input name=sval> <button type='submit'> </from>");
-
-            listCourses($input, $search);
         }
+        
+        $search = '';
+        if(isset($POST['sval'])){
+            $search = $_POST['sval'];
+        }
+        listCourses($semester, $search);
     }
     
     semestrator();
