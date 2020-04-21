@@ -14,7 +14,7 @@
         printf ("Error: %s\n", mysqli_error($db));
     }
 
-    $sql = "SHOW TABLES FROM $dbname";
+    $sql = "SHOW TABLES FROM WT8";
     $result = mysql_query($sql);
 
     if (!$result) {
