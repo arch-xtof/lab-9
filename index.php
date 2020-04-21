@@ -36,7 +36,7 @@
 
         if(mysqli_num_rows($result) > 0){
             
-            printf("<table> <tr> <th>Code</th> <th>Name</th> <th>Credits</th> </tr>");
+            printf("<table> <tr> <th>Code</th> <th>Name</th> <th>Credits</th> <th>Semester</th> </tr>");
             while($row = mysqli_fetch_array($result)){
                 printf("<tr> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> </tr>", $row['course_code'], $row['course_name'], $row['ects_credits'], $row['semester_name']);
             }
