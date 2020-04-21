@@ -23,6 +23,10 @@
         exit;
     }
 
+    if($reult){
+        echo 'bruh';
+    }
+
     while ($row = mysql_fetch_row($result)) {
         echo "Table: {$row[0]}\n";
     }
