@@ -58,10 +58,11 @@
         printf("</ul>");
 
         if(isset($_GET['semester'])){
-            $input = mysqli_real_escape_string($db, $_GET['semester']);
-            printf("<form method='POST' action='index.php'> <label for='sval'>Search by code or name: </label> <input name=sval> <button type='submit' value='search'> </from>");
+            $semester = mysqli_real_escape_string($db, $_GET['semester']);
+            $search = mysqli_real_escape_string($db, $_POST['sval']);
+            printf("<form method='POST' action='index.php'> <label for='sval'>Search by code or name: </label> <input name=sval> <button type='submit'> </from>");
 
-            listCourses($input);
+            listCourses($input, $search);
         }
     }
     
