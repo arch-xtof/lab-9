@@ -9,14 +9,12 @@
     if(!$db) die("Connnection to DB failed: " . mysqli_connect_error());
 
     $sql = "SELECT * FROM courses";
-    $result = mysqli_query($sql);
+    $result = mysqli_query($db, $sql);
     
     echo "this is ";
 
     if (!$result) {
         echo "weird";
-        $sql = "SELECT * FROM courses;";
-        $result = mysqli_query($sql);
     }
 
     if($result){
