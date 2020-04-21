@@ -51,6 +51,8 @@
         $query = "SELECT * FROM semesters_arch";
         $result = mysqli_query($db, $query);
 
+        printf("<form method=POST> <input name=search> <input type=submit> </form>");
+
         printf("<ul>");
         while($row = mysqli_fetch_array($result)){
             printf("<li><a href=index.php?semester=%s>%s</a></li>", $row['ID'], $row['semester_name']);
