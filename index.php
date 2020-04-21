@@ -46,6 +46,8 @@
 
     function semestrator(){
 
+        global $db;
+
         $query = "SELECT * FROM semesters_arch";
         $result = mysqli_query($db, $query);
 
