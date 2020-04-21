@@ -13,13 +13,13 @@
     
     echo "this is ";
 
-    /*if (!$result) {
+    if (!$result) {
         echo "weird";
     }
 
     if($result){
         echo "even more werid";
-    }*/
+    }
 
     /*while ($row = mysql_fetch_row($result)) {
         echo "Table: {$row[0]}\n";
