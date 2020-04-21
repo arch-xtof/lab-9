@@ -23,6 +23,10 @@
         exit;
     }
 
+    while ($row = mysql_fetch_row($result)) {
+        echo "Table: {$row[0]}\n";
+    }
+
     function listCourses(){
         
         $query = "SELECT * FROM courses";
