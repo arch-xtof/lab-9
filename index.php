@@ -67,7 +67,7 @@
         if(isset($POST['search'])){
             $search = $_POST['search'];
         }
-        echo $search;
+        echo "search: ".$search;
         listCourses($semester, $search);
     }
     
