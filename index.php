@@ -58,6 +58,7 @@
     //semestrator();
     //listCourses();
     printf("<form method=POST> <input type=text name=search> <input type=submit> </form>");
+    $search = "";
     if(isset($POST['search'])){
         $search = $_POST['search'];
     }
