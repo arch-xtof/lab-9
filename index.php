@@ -25,23 +25,22 @@
     }*/
 
     function listCourses(){
-        
-        global $db;
-        $sql = "SELECT * FROM courses";
-        $result = mysqli_query($db, $sql);
-        
-        echo "this is ";
 
-        if (!$result) {
-            echo "weird";
-            if(isset($db)){echo "+";}
-        }
+        //P - shittiest
+        //H - lanugage
+        //P - ever
+        global $db;
+
+        $query = "SELECT * FROM courses";
+        $result = mysqli_query($db, $query);
 
         if(mysqli_num_rows($result) > 0){
-            echo "1";
+            
+            printf("<table> <tr> <th>Code</th> <th>Name</th> <th>Credits</th> </tr>");
             while($row = mysqli_fetch_array($result)){
-                printf("%s\t %s\t %s<br>", $row['course_code'], $row['course_name'], $row['ects_credits']);
+                printf("<tr> <td>%s</td> <td>%s</td> <td>%s</td> </tr>", $row['course_code'], $row['course_name'], $row['ects_credits']);
             }
+            printf("</table>");
         }
     }
     
