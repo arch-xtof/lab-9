@@ -4,7 +4,7 @@
 
     // Create connection
     //$db = mysqli_connect($server, $user, $password, $database);
-    $db = mysqli_connect("anysql.itcollege.ee", "WT8", "CJuPlun24D", "dadasda");
+    $db = mysqli_connect("anysql.itcollege.ee", "WT8", "CJuPlun24D", "WT8");
     // Check connection
     if(!$db) die("Connnection to DB failed: " . mysqli_connect_error());
 
@@ -12,6 +12,15 @@
         printf ("Our connection is ok!\n");
     } else {
         printf ("Error: %s\n", mysqli_error($db));
+    }
+
+    $sql = "SHOW TABLES FROM $dbname";
+    $result = mysql_query($sql);
+
+    if (!$result) {
+        echo "DB Error, could not list tables\n";
+        echo 'MySQL Error: ' . mysql_error();
+        exit;
     }
 
     function listCourses(){
@@ -27,5 +36,5 @@
         }
     }
     
-    listCourses();
+    //listCourses();
 ?>
