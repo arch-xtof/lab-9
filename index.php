@@ -59,7 +59,7 @@
 
         if(isset($_GET['semester'])){
             $input = mysqli_real_escape_string($db, $_GET['semester']);
-            printf("<form method='POST' action='index.php'></from>");
+            printf("<form method='POST' action='index.php'> <label for='sval'>Search by code or name: </label> <input name=sval> <button type='submit' value='search'> </from>");
 
             listCourses($input);
         }
