@@ -24,21 +24,21 @@
         }
     }*/
 
-    function listCourses(){
+    function listCourses($sID){
 
         //P - shittiest
         //H - lanugage
         //P - ever
         global $db;
 
-        $query = "SELECT * FROM courses";
+        $query = "SELECT course_code, course_name, ects_credits, semester_name, Semesters_ID FROM courses C LEFT JOIN semesters_arch S ON C.Semesters_ID=S.ID WHERE Semesters_ID='$sID'";
         $result = mysqli_query($db, $query);
 
         if(mysqli_num_rows($result) > 0){
             
             printf("<table> <tr> <th>Code</th> <th>Name</th> <th>Credits</th> </tr>");
             while($row = mysqli_fetch_array($result)){
-                printf("<tr> <td>%s</td> <td>%s</td> <td>%s</td> </tr>", $row['course_code'], $row['course_name'], $row['ects_credits']);
+                printf("<tr> <td>%s</td> <td>%s</td> <td>%s</td> </tr>", $row['course_code'], $row['course_name'], $row['ects_credits'], $row['semester_name']);
             }
             printf("</table>");
         }
@@ -59,7 +59,8 @@
 
         if(isset($_GET['semester'])){
             $input = mysqli_real_escape_string($db, $_GET['semester']);
-            echo $input;
+
+            listCourses($input);
         }
     }
     
