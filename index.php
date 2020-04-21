@@ -4,7 +4,7 @@
 
     // Create connection
     //$db = mysqli_connect($server, $user, $password, $database);
-    $db = mysqli_connect("anysql.itcollege.ee", "WT8", "CJuPlun24D", "WT8");
+    $db = mysqli_connect("anysql.itcollege.ee", "WT8", "CJuPlun24D", "dadasda");
     // Check connection
     if(!$db) die("Connnection to DB failed: " . mysqli_connect_error());
 
