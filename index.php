@@ -9,19 +9,15 @@
     if(!$db) die("Connnection to DB failed: " . mysqli_connect_error());
 
     function listCourses(){
-        echo '3';
-        $query = "SELECT course_code, course_name, ects_credits FROM courses ORDER BY id ASC";
+        
+        $query = "SELECT course_code, course_name, ects_credits FROM courses";
         $result = mysqli_query($db, $query);
-        echo $query.";";
-        echo $result;
+        
         if(mysqli_num_rows($result) > 0){
             
             while($row = mysqli_fetch_array($result)){
                 printf("%s\t %s\t %s", $row['course_code'], $row['course_name'], $row['ects_credits']);
-                echo '1';
             }
-
-            echo '2';
         }
     }
     
