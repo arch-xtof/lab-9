@@ -8,13 +8,15 @@
     // Check connection
     if(!$db) die("Connnection to DB failed: " . mysqli_connect_error());
 
-    $sql = "SHOW TABLES";
+    $sql = "SELECT * FROM courses";
     $result = mysqli_query($sql);
     
     echo "this is ";
 
     if (!$result) {
         echo "weird";
+        $sql = "SELECT * FROM courses;";
+        $result = mysqli_query($sql);
     }
 
     if($result){
