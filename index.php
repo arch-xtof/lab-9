@@ -22,7 +22,7 @@
             
             printf("<table> <tr> <th>Code</th> <th>Name</th> <th>Credits</th> <th>Semester</th> </tr>");
             while($row = mysqli_fetch_array($result)){
-                printf("<tr> <td>%s</td> <td>%s</td> <td><storng>%s</strong></td> <td>%s</td> </tr>", $row['course_code'], $row['course_name'], $row['ects_credits'], $row['semester_name']);
+                printf("<tr> <td>%s</td> <td>%s</td> <td><strong>%s</strong></td> <td>%s</td> </tr>", $row['course_code'], $row['course_name'], $row['ects_credits'], $row['semester_name']);
             }
             printf("</table>");
         }
