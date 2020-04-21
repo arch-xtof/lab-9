@@ -11,17 +11,17 @@
     $sql = "SHOW TABLES FROM $database";
     $result = mysql_query($sql);
     
-    echo 'this is: ';
+    echo "this is ";
 
     if (!$result) {
-        echo 'weird';
+        echo "weird";
     }
 
     if($result){
-        echo 'bruh';
+        echo "even more werid";
     }
 
-    while ($row = mysql_fetch_row($result)) {
+    /*while ($row = mysql_fetch_row($result)) {
         echo "Table: {$row[0]}\n";
     }
 
@@ -38,5 +38,5 @@
         }
     }
     
-    //listCourses();
+    //listCourses();*/
 ?>
