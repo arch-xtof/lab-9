@@ -31,7 +31,7 @@
         //P - ever
         global $db;
 
-        $query = "SELECT course_code, course_name, ects_credits, semester_name, Semesters_ID FROM courses C LEFT JOIN semesters_arch S ON C.Semesters_ID=S.ID WHERE Semesters_ID='$sID'";
+        $query = "SELECT course_code, course_name, ects_credits, semester_name, Semesters_ID FROM courses C LEFT JOIN semesters_arch S ON C.Semesters_ID=S.ID WHERE Semesters_ID='$sID' AND course_name LIKE '%$search%' OR course_code LIKE '%$search%'";
         $result = mysqli_query($db, $query);
 
         if(mysqli_num_rows($result) > 0){
@@ -51,13 +51,13 @@
         $query = "SELECT * FROM semesters_arch";
         $result = mysqli_query($db, $query);
 
-        printf("<form method=POST> <input name=search> <input type=submit> </form>");
-
         printf("<ul>");
         while($row = mysqli_fetch_array($result)){
             printf("<li><a href=index.php?semester=%s>%s</a></li>", $row['ID'], $row['semester_name']);
         }
         printf("</ul>");
+
+        printf("<form method=POST> <input name=search> <input type=submit> </form>");
 
         if(isset($_GET['semester'])){
             $semester = mysqli_real_escape_string($db, $_GET['semester']);
