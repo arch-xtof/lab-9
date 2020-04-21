@@ -53,7 +53,7 @@
 
         printf("<ul>");
         while($row = mysqli_fetch_array($result)){
-            printf("<li><a>%s</a></li>", $row['semester_name']);
+            printf("<li><a href=?semester=%s>%s</a></li>", $row['ID'], $row['semester_name']);
         }
         printf("</ul>");
     }
