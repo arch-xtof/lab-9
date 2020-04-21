@@ -53,9 +53,14 @@
 
         printf("<ul>");
         while($row = mysqli_fetch_array($result)){
-            printf("<li><a href=?semester=%s>%s</a></li>", $row['ID'], $row['semester_name']);
+            printf("<li><a href=index.php?semester=%s>%s</a></li>", $row['ID'], $row['semester_name']);
         }
         printf("</ul>");
+
+        if(isset($_GET['semester'])){
+            $input = mysqli_real_escape_string($db, $_GET['semester']);
+            echo $input;
+        }
     }
     
     semestrator();
