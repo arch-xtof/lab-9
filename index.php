@@ -53,7 +53,7 @@
         while($row = mysqli_fetch_array($result)){
             printf("<li><a>%s</a></li>", $row['semester_name']);
         }
-        printf("<ul>");
+        printf("</ul>");
     }
     
     semestrator();
