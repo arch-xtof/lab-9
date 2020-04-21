@@ -10,7 +10,7 @@
 
     function listCourses(){
         
-        $query = "SELECT course_code, course_name, ects_credits FROM courses";
+        $query = "SELECT * FROM courses ;";
         $result = mysqli_query($db, $query);
         
         if(mysqli_num_rows($result) > 0){
