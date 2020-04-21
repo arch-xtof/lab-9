@@ -16,11 +16,10 @@
 
     $sql = "SHOW TABLES FROM WT8";
     $result = mysql_query($sql);
-
+    
+    echo 'this is: ';
     if (!$result) {
-        echo "DB Error, could not list tables\n";
-        echo 'MySQL Error: ' . mysql_error();
-        exit;
+        echo 'weird';
     }
 
     if($result){
