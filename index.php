@@ -59,7 +59,7 @@
     //listCourses();
     printf("<form method=POST action=index.php> <input type=text name=search> <input type=submit> </form>");
     $search = "";
-    if(isset($POST['search'])){
+    if(isset($_POST['search'])){
         $search = $_POST['search'];
     }
     echo "search: ".$search;
