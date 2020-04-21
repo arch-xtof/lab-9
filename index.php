@@ -8,7 +8,7 @@
     // Check connection
     if(!$db) die("Connnection to DB failed: " . mysqli_connect_error());
 
-    /*$sql = "SELECT * FROM courses";
+    $sql = "SELECT * FROM courses";
     $result = mysqli_query($db, $sql);
     
     echo "this is ";
@@ -22,7 +22,7 @@
         while($row = mysqli_fetch_array($result)){
             printf("%s\t %s\t %s", $row['course_code'], $row['course_name'], $row['ects_credits']);
         }
-    }*/
+    }
 
     function listCourses(){
         
@@ -36,5 +36,5 @@
         }
     }
     
-    listCourses();
+    //listCourses();
 ?>
