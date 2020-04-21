@@ -23,7 +23,7 @@
         exit;
     }
 
-    if($reult){
+    if($result){
         echo 'bruh';
     }
 
