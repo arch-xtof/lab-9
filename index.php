@@ -7,8 +7,9 @@
     $db = mysqli_connect("anysql.itcollege.ee", "WT8", "CJuPlun24D", "WT8");
     // Check connection
     if(!$db) die("Connnection to DB failed: " . mysqli_connect_error());
+    echo "bruh";
 
-    $sql = "SHOW TABLES FROM $database";
+    /*$sql = "SHOW TABLES FROM $database";
     $result = mysql_query($sql);
     
     echo "this is ";
@@ -19,7 +20,7 @@
 
     if($result){
         echo "even more werid";
-    }
+    }*/
 
     /*while ($row = mysql_fetch_row($result)) {
         echo "Table: {$row[0]}\n";
