@@ -24,7 +24,7 @@
         }
     }*/
 
-    function listCourses($sID){
+    function listCourses($sID, $search){
 
         //P - shittiest
         //H - lanugage
@@ -59,6 +59,7 @@
 
         if(isset($_GET['semester'])){
             $input = mysqli_real_escape_string($db, $_GET['semester']);
+            printf("<form method='POST' action='index.php'></from>");
 
             listCourses($input);
         }
