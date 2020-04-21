@@ -56,5 +56,6 @@
         printf("<ul>");
     }
     
+    semestrator();
     //listCourses();
 ?>
