@@ -31,7 +31,7 @@
         //P - ever
         global $db;
 
-        $query = "SELECT course_code, course_name, ects_credits, semester_name, Semesters_ID FROM courses C LEFT JOIN semesters_arch S ON C.Semesters_ID=S.ID WHERE Semesters_ID='$sID' AND course_name LIKE '%$search%' OR course_code LIKE '%$search%'";
+        $query = "SELECT course_code, course_name, ects_credits, semester_name, Semesters_ID FROM courses C LEFT JOIN semesters_arch S ON C.Semesters_ID=S.ID WHERE Semesters_ID='$sID' AND ( course_name LIKE '%$search%' OR course_code LIKE '%$search%' )";
         $result = mysqli_query($db, $query);
 
         if(mysqli_num_rows($result) > 0){
