@@ -57,7 +57,7 @@
         }
         printf("</ul>");
 
-        printf("<form method=POST> <input name=search> <input type=submit> </form>");
+        printf("<form method=POST action=index.php> <input name=search> <input type=submit> </form>");
 
         if(isset($_GET['semester'])){
             $semester = mysqli_real_escape_string($db, $_GET['semester']);
