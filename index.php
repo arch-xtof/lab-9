@@ -17,15 +17,14 @@
         echo "weird";
     }
 
-    if($result){
-        echo "even more werid";
+    if(mysqli_num_rows($result) > 0){
+        echo "1";
+        while($row = mysqli_fetch_array($result)){
+            printf("%s\t %s\t %s", $row['course_code'], $row['course_name'], $row['ects_credits']);
+        }
     }
 
-    /*while ($row = mysql_fetch_row($result)) {
-        echo "Table: {$row[0]}\n";
-    }
-
-    function listCourses(){
+    /*function listCourses(){
         
         $query = "SELECT * FROM courses";
         $result = mysqli_query($db, $query);
