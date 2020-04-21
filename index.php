@@ -12,6 +12,7 @@
         echo '3';
         $query = "SELECT course_code, course_name, ects_credits FROM courses ORDER BY id ASC";
         $result = mysqli_query($db, $query);
+        echo mysqli_num_rows($result);
         if(mysqli_num_rows($result) > 0){
             
             while($row = mysqli_fetch_array($result)){
