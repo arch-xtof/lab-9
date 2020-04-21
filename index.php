@@ -3,14 +3,11 @@
     require('connect.db.php');
 
     // Create connection
-    $db = new mysqli($servername, $username, $password);
+    $db = mysqli_connect($server, $user, $password, $database);
 
     // Check connection
-    if ($db->connect_error) {
-        die("Connection failed: " . $db->connect_error);
-    }
-    //echo "Connected successfully";
-    echo '4';
+    if(!$db) die("Connnection to DB failed: " . mysqli_connect_error());
+
     function listCourses(){
         echo '3';
         $query = "SELECT course_code, course_name, ects_credits FROM courses ORDER BY id ASC";
@@ -25,6 +22,6 @@
             echo '2';
         }
     }
-
+    
     listCourses();
 ?>

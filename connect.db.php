@@ -1,7 +1,8 @@
 <?php
 
-    $servername = "anysql.itcollege.ee";
-    $username = "WT8";
+    $server = "anysql.itcollege.ee";
+    $user = "WT8";
     $password = "CJuPlun24D";
+    $database = "WT8";
 
 ?>
