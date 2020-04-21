@@ -8,16 +8,11 @@
     // Check connection
     if(!$db) die("Connnection to DB failed: " . mysqli_connect_error());
 
-    if (mysqli_ping($db)) {
-        printf ("Our connection is ok!\n");
-    } else {
-        printf ("Error: %s\n", mysqli_error($db));
-    }
-
-    $sql = "SHOW TABLES FROM WT8";
+    $sql = "SHOW TABLES FROM $database";
     $result = mysql_query($sql);
     
     echo 'this is: ';
+
     if (!$result) {
         echo 'weird';
     }
