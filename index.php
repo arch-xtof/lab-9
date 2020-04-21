@@ -8,22 +8,6 @@
     // Check connection
     if(!$db) die("Connnection to DB failed: " . mysqli_connect_error());
 
-    /*$sql = "SELECT * FROM courses";
-    $result = mysqli_query($db, $sql);
-    
-    echo "this is ";
-
-    if (!$result) {
-        echo "weird";
-    }
-
-    if(mysqli_num_rows($result) > 0){
-        echo "1";
-        while($row = mysqli_fetch_array($result)){
-            printf("%s\t %s\t %s<br>", $row['course_code'], $row['course_name'], $row['ects_credits']);
-        }
-    }*/
-
     function listCourses($sID, $search){
 
         //P - shittiest
@@ -71,6 +55,11 @@
         listCourses($semester, $search);
     }
     
-    semestrator();
+    //semestrator();
     //listCourses();
+    printf("<form method=POST> <input type=text name=search> <input type=submit> </form>");
+    if(isset($POST['search'])){
+        $search = $_POST['search'];
+    }
+    echo "search: ".$search;
 ?>
