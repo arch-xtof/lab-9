@@ -64,8 +64,8 @@
         }
         
         $search = '';
-        if(isset($POST['sval'])){
-            $search = $_POST['sval'];
+        if(isset($POST['search'])){
+            $search = $_POST['search'];
         }
         echo $search;
         listCourses($semester, $search);
