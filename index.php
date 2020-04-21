@@ -26,6 +26,7 @@
 
     function listCourses(){
         
+        global $db;
         $sql = "SELECT * FROM courses";
         $result = mysqli_query($db, $sql);
         
