@@ -45,18 +45,18 @@
 
         if(isset($_GET['semester'])){
             $semester = mysqli_real_escape_string($db, $_GET['semester']);
-        }
-        
-        $search = '';
-        if(isset($_POST['search'])){
-            $search = $_POST['search'];
-        }
 
-        $order = '';
-        if(isset($_POST['order'])){
-            $order = $_POST['order'];
+            $search = '';
+            if(isset($_POST['search'])){
+                $search = $_POST['search'];
+            }
+
+            $order = '';
+            if(isset($_POST['order'])){
+                $order = $_POST['order'];
+            }
+            listCourses($semester, $search, $order);
         }
-        listCourses($semester, $search, $order);
     }
     
     semestrator();
