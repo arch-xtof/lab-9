@@ -8,14 +8,14 @@
     // Check connection
     if(!$db) die("Connnection to DB failed: " . mysqli_connect_error());
 
-    function listCourses($sID, $search){
+    function listCourses($sID, $search, $order){
 
         //P - shittiest
         //H - lanugage
         //P - ever
         global $db;
 
-        $query = "SELECT course_code, course_name, ects_credits, semester_name, Semesters_ID FROM courses C LEFT JOIN semesters_arch S ON C.Semesters_ID=S.ID WHERE Semesters_ID='$sID' AND ( course_name LIKE '%$search%' OR course_code LIKE '%$search%' )";
+        $query = "SELECT course_code, course_name, ects_credits, semester_name, Semesters_ID FROM courses C LEFT JOIN semesters_arch S ON C.Semesters_ID=S.ID WHERE Semesters_ID='$sID' AND ( course_name LIKE '%$search%' OR course_code LIKE '%$search%' )".$order;
         $result = mysqli_query($db, $query);
 
         if(mysqli_num_rows($result) > 0){
@@ -41,18 +41,22 @@
         }
         printf("</ul>");
 
-        printf("<form method=POST> <input name=search> <input type=submit> </form>");
+        printf("<form method=POST> <input name=search> <select name=order> <option value='ORDER BY ects_credits DESC'>Descending</option> <option value=' ORDER BY ects_credits ASC'>Ascending</option> </select> <input type=submit> </form>");
 
         if(isset($_GET['semester'])){
             $semester = mysqli_real_escape_string($db, $_GET['semester']);
         }
         
-        $search = 'yo';
+        $search = '';
         if(isset($_POST['search'])){
             $search = $_POST['search'];
         }
-        echo "search: ".$search;
-        listCourses($semester, $search);
+
+        $order = '';
+        if(isset($_POST['order'])){
+            $order = $_POST['order'];
+        }
+        listCourses($semester, $search, $order);
     }
     
     semestrator();
