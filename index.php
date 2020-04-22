@@ -41,10 +41,10 @@
         }
         printf("</ul>");
 
-        printf("<form method=POST> <input name=search> <select name=order> <option value='ORDER BY ects_credits DESC'>Descending</option> <option value=' ORDER BY ects_credits ASC'>Ascending</option> </select> <input type=submit> </form>");
-
         if(isset($_GET['semester'])){
             $semester = mysqli_real_escape_string($db, $_GET['semester']);
+
+            printf("<form method=POST> <input name=search> <select name=order> <option value='ORDER BY ects_credits DESC'>Descending</option> <option value=' ORDER BY ects_credits ASC'>Ascending</option> </select> <input type=submit> </form>");
 
             $search = '';
             if(isset($_POST['search'])){
